@@ -9,14 +9,16 @@
 #ifndef KEYPAD_H_
 #define KEYPAD_H_
 
-#include "../Lib/STD_TYPES.h"
-#include "../Lib/BIT_MATH.h"
-#include "../MCAL/DIO.h"
+#include "../../Lib/STD_TYPES.h"
+#include "../../Lib/BIT_MATH.h"
+#include "../../MCAL/DIO/DIO.h"
 
 /* NUMBER OF ROWS AND COLUMNS */
-#define KEYPAD_ROW_PORT				PORTB_ID
-#define KEYPAD_COL_PORT				PORTC_ID
+#define KEYPAD_ROW_PORT				PORTA_ID
+#define KEYPAD_COL_PORT				PORTB_ID
 
+#define COL_PORT_OUTPUT				0x0F
+#define ROW_PORT_INPUT				0x00
 
 /* PORT CONFIGURATIONS */
 #define KEYPAD_R0_PIN			0
@@ -41,7 +43,7 @@
 #define KEYPAD_BUTTON_RELEASED		PIN_HIGH
 
 #define KPD_VALUES     {{'7','8','9','÷'},\
-{'4','5','6','x'},\
+{'4','5','6','*'},\
 {'1','2','3','-'},\
 {'c','0','=','+'}}
 

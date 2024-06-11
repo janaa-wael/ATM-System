@@ -7,9 +7,9 @@
 
 
 #include <avr/delay.h>
-#include "../Lib/BIT_MATH.h"
-#include "../Lib/STD_TYPES.h"
-#include "../MCAL/DIO.h"
+#include "../../Lib/BIT_MATH.h"
+#include "../../Lib/STD_TYPES.h"
+#include "../../MCAL/DIO/DIO.h"
 #include "LCD.h"
 
 
@@ -29,6 +29,8 @@
  */
 void LCD_voidInit()
 {
+	DIO_voidSetPortDirection(PORTC_ID,PORT_OUTPUT);
+	DIO_voidSetPortDirection(PORTD_ID,PORT_OUTPUT);
 	_delay_us(300);
 	LCD_SendCommand(LCD_FUNCTION_SET_CMND);
 	_delay_ms(1);
@@ -38,7 +40,6 @@ void LCD_voidInit()
 	_delay_ms(5);
 	LCD_SendCommand(LCD_ENTRY_MODE_SET_CMND);
 	_delay_ms(5);
-
 }
 
 
@@ -123,14 +124,6 @@ void ConvertFloatToStr(u16 temp,char *str)
 	temp = sprintf(str, "%d", temp);
 }
 
-void LCD_voidJumpTo2ndLine(void)
-{
-	u8 i;
-	for(i = 12 ; i < 39 ; i++)
-	{
-		LCD_voidSendData(' ');
-	}
-}
 
 /* 
  * Description : 
@@ -174,6 +167,18 @@ void LCD_voidSetCursor(u8 row, u8 col)
 
     LCD_SendCommand(0x80 | address);  // Set DDRAM address command
 		_delay_ms(1);
+}
+
+void LCD_voidSetDataPos(u8 row, u8 col, u8 character)
+{
+	LCD_voidSetCursor(row,col);
+	LCD_voidSendData(character);
+}
+
+void LCD_voidSetStringPos(u8 row, u8 col, u8 *str)
+{
+    LCD_voidSetCursor(row,col);
+	LCD_voidSendString(str);	
 }
 
 void LCD_voidDeleteCharacters(u8 row, u8 col, u8 length) {

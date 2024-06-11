@@ -6,25 +6,25 @@
  */ 
 
 #include <avr/delay.h>
-#include "../Lib/STD_TYPES.h"
-#include "../Lib/BIT_MATH.h"
+#include "../../Lib/STD_TYPES.h"
+#include "../../Lib/BIT_MATH.h"
 #include "KEYPAD.h"
 const u8 KEYPAD [4][4]= KPD_VALUES;
 
 void KEYPAD_voidInit(void)
 {
 	/*Set the Raw port as input with PORT=1 to activate the internal pull up */
-	DIO_voidSetPortDirection(KEYPAD_ROW_PORT,PORT_INPUT);
+	DIO_voidSetPortDirection(KEYPAD_ROW_PORT,ROW_PORT_INPUT);
 	DIO_voidSetPortValue(KEYPAD_ROW_PORT,0x0F);
 	/*Set the COL port as output with Initial value =LOGIC HIGH*/ 
-    DIO_voidSetPortDirection(KEYPAD_COL_PORT,PORT_OUTPUT);
+    DIO_voidSetPortDirection(KEYPAD_COL_PORT,COL_PORT_OUTPUT);
     DIO_voidSetPortValue(KEYPAD_COL_PORT,0x0F);
 }
 
 u8 KEYPAD_READ(void) {
 		u8 row = 0;
 		u8 col = 0;
-    DIO_voidSetPortValue(KEYPAD_COL_PORT,0xFF);
+    DIO_voidSetPortValue(KEYPAD_COL_PORT,0x0F);
     DIO_voidSetPortValue(KEYPAD_ROW_PORT,0x0F);
     for (col = 0; col < 4; col++) {
         // Drive the current column low
@@ -52,5 +52,5 @@ u8 KEYPAD_READ(void) {
         // Reset the column back high
         DIO_voidSetPinValue(KEYPAD_COL_PORT, col, 1);
     }
-    return 0xFF;  // Indicate no key press
+    return 'x';  // Indicate no key press
 }

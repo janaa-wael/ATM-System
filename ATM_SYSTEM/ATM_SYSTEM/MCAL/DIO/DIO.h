@@ -10,7 +10,7 @@
 #define DIO_H_
 
 
-#include "../Lib/STD_TYPES.h"
+#include "../../Lib/STD_TYPES.h"
 
 
 /*******************************************

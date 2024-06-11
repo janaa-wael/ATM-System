@@ -6,8 +6,8 @@
  */ 
 
 #include "DIO.h"
-#include "../Lib/BIT_MATH.h" /* To use the macros like SET_BIT */
-#include "../Lib/STD_TYPES.h"
+#include "../../Lib/BIT_MATH.h" /* To use the macros like SET_BIT */
+#include "../../Lib/STD_TYPES.h"
 
 
 /*
