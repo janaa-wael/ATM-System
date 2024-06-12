@@ -2,7 +2,7 @@
  * ATM_SYSTEM.c
  *
  * Created: 6/10/2024 8:36:16 PM
- * Author : hp
+ * Author : Jana Wael
  */ 
 
 /************************************************************************/
@@ -26,6 +26,7 @@ int main(void)
 	HAL_Init();
 	APP_voidWelcomeMessage();
 	APP_voidCheckPassword();
-	APP_voidPrintMenu();
+	while(1)
+		APP_voidPrintMenu();
 }
 

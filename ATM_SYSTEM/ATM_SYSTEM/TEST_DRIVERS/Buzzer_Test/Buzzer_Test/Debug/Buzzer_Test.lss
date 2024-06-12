@@ -1,0 +1,289 @@
+
+Buzzer_Test.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000001b6  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00800060  00800060  0000020a  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .comment      00000030  00000000  00000000  0000020a  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  0000023c  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 000000a0  00000000  00000000  00000278  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   0000098e  00000000  00000000  00000318  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000006ba  00000000  00000000  00000ca6  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000495  00000000  00000000  00001360  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  000000ec  00000000  00000000  000017f8  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000447  00000000  00000000  000018e4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    000002f2  00000000  00000000  00001d2b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000070  00000000  00000000  0000201d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+   8:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+   c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  10:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  14:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  18:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  1c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  20:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  24:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  28:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  2c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  30:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  34:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  38:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  3c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  40:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  44:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  48:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  4c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  50:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d8 e0       	ldi	r29, 0x08	; 8
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+  60:	0e 94 d0 00 	call	0x1a0	; 0x1a0 <main>
+  64:	0c 94 d9 00 	jmp	0x1b2	; 0x1b2 <_exit>
+
+00000068 <__bad_interrupt>:
+  68:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+0000006c <BUZZER_ON>:
+#include "BUZZER.h"
+
+void BUZZER_Init()
+{
+	DIO_voidSetPinDirection(BUZZER_PORT,BUZZER_PIN,PIN_OUTPUT);
+	BUZZER_OFF();
+  6c:	41 e0       	ldi	r20, 0x01	; 1
+  6e:	63 e0       	ldi	r22, 0x03	; 3
+  70:	81 e0       	ldi	r24, 0x01	; 1
+  72:	0e 94 50 00 	call	0xa0	; 0xa0 <DIO_voidSetPinValue>
+  76:	08 95       	ret
+
+00000078 <BUZZER_OFF>:
+  78:	40 e0       	ldi	r20, 0x00	; 0
+  7a:	63 e0       	ldi	r22, 0x03	; 3
+  7c:	81 e0       	ldi	r24, 0x01	; 1
+  7e:	0e 94 50 00 	call	0xa0	; 0xa0 <DIO_voidSetPinValue>
+  82:	08 95       	ret
+
+00000084 <BUZZER_TOGGLE>:
+	DIO_voidSetPinValue(BUZZER_PORT,BUZZER_PIN,PIN_LOW);
+}
+
+void BUZZER_TOGGLE()
+{
+	BUZZER_ON();
+  84:	0e 94 36 00 	call	0x6c	; 0x6c <BUZZER_ON>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  88:	2f ef       	ldi	r18, 0xFF	; 255
+  8a:	84 e3       	ldi	r24, 0x34	; 52
+  8c:	9c e0       	ldi	r25, 0x0C	; 12
+  8e:	21 50       	subi	r18, 0x01	; 1
+  90:	80 40       	sbci	r24, 0x00	; 0
+  92:	90 40       	sbci	r25, 0x00	; 0
+  94:	e1 f7       	brne	.-8      	; 0x8e <BUZZER_TOGGLE+0xa>
+  96:	00 c0       	rjmp	.+0      	; 0x98 <BUZZER_TOGGLE+0x14>
+  98:	00 00       	nop
+	_delay_ms(4000);
+	BUZZER_OFF();
+  9a:	0e 94 3c 00 	call	0x78	; 0x78 <BUZZER_OFF>
+  9e:	08 95       	ret
+
+000000a0 <DIO_voidSetPinValue>:
+		case PORTA_ID: return GET_BIT(PINA,Copy_u8PIN);
+		case PORTB_ID: return GET_BIT(PINB,Copy_u8PIN);
+		case PORTC_ID: return GET_BIT(PINC,Copy_u8PIN);
+		case PORTD_ID: return GET_BIT(PIND,Copy_u8PIN);
+	}
+}
+  a0:	41 30       	cpi	r20, 0x01	; 1
+  a2:	a1 f5       	brne	.+104    	; 0x10c <DIO_voidSetPinValue+0x6c>
+  a4:	81 30       	cpi	r24, 0x01	; 1
+  a6:	89 f0       	breq	.+34     	; 0xca <DIO_voidSetPinValue+0x2a>
+  a8:	28 f0       	brcs	.+10     	; 0xb4 <DIO_voidSetPinValue+0x14>
+  aa:	82 30       	cpi	r24, 0x02	; 2
+  ac:	c9 f0       	breq	.+50     	; 0xe0 <DIO_voidSetPinValue+0x40>
+  ae:	83 30       	cpi	r24, 0x03	; 3
+  b0:	11 f1       	breq	.+68     	; 0xf6 <DIO_voidSetPinValue+0x56>
+  b2:	08 95       	ret
+  b4:	2b b3       	in	r18, 0x1b	; 27
+  b6:	81 e0       	ldi	r24, 0x01	; 1
+  b8:	90 e0       	ldi	r25, 0x00	; 0
+  ba:	02 c0       	rjmp	.+4      	; 0xc0 <DIO_voidSetPinValue+0x20>
+  bc:	88 0f       	add	r24, r24
+  be:	99 1f       	adc	r25, r25
+  c0:	6a 95       	dec	r22
+  c2:	e2 f7       	brpl	.-8      	; 0xbc <DIO_voidSetPinValue+0x1c>
+  c4:	82 2b       	or	r24, r18
+  c6:	8b bb       	out	0x1b, r24	; 27
+  c8:	08 95       	ret
+  ca:	28 b3       	in	r18, 0x18	; 24
+  cc:	81 e0       	ldi	r24, 0x01	; 1
+  ce:	90 e0       	ldi	r25, 0x00	; 0
+  d0:	02 c0       	rjmp	.+4      	; 0xd6 <DIO_voidSetPinValue+0x36>
+  d2:	88 0f       	add	r24, r24
+  d4:	99 1f       	adc	r25, r25
+  d6:	6a 95       	dec	r22
+  d8:	e2 f7       	brpl	.-8      	; 0xd2 <DIO_voidSetPinValue+0x32>
+  da:	82 2b       	or	r24, r18
+  dc:	88 bb       	out	0x18, r24	; 24
+  de:	08 95       	ret
+  e0:	25 b3       	in	r18, 0x15	; 21
+  e2:	81 e0       	ldi	r24, 0x01	; 1
+  e4:	90 e0       	ldi	r25, 0x00	; 0
+  e6:	02 c0       	rjmp	.+4      	; 0xec <DIO_voidSetPinValue+0x4c>
+  e8:	88 0f       	add	r24, r24
+  ea:	99 1f       	adc	r25, r25
+  ec:	6a 95       	dec	r22
+  ee:	e2 f7       	brpl	.-8      	; 0xe8 <DIO_voidSetPinValue+0x48>
+  f0:	82 2b       	or	r24, r18
+  f2:	85 bb       	out	0x15, r24	; 21
+  f4:	08 95       	ret
+  f6:	22 b3       	in	r18, 0x12	; 18
+  f8:	81 e0       	ldi	r24, 0x01	; 1
+  fa:	90 e0       	ldi	r25, 0x00	; 0
+  fc:	02 c0       	rjmp	.+4      	; 0x102 <DIO_voidSetPinValue+0x62>
+  fe:	88 0f       	add	r24, r24
+ 100:	99 1f       	adc	r25, r25
+ 102:	6a 95       	dec	r22
+ 104:	e2 f7       	brpl	.-8      	; 0xfe <DIO_voidSetPinValue+0x5e>
+ 106:	82 2b       	or	r24, r18
+ 108:	82 bb       	out	0x12, r24	; 18
+ 10a:	08 95       	ret
+ 10c:	41 11       	cpse	r20, r1
+ 10e:	37 c0       	rjmp	.+110    	; 0x17e <DIO_voidSetPinValue+0xde>
+ 110:	81 30       	cpi	r24, 0x01	; 1
+ 112:	91 f0       	breq	.+36     	; 0x138 <DIO_voidSetPinValue+0x98>
+ 114:	28 f0       	brcs	.+10     	; 0x120 <DIO_voidSetPinValue+0x80>
+ 116:	82 30       	cpi	r24, 0x02	; 2
+ 118:	d9 f0       	breq	.+54     	; 0x150 <DIO_voidSetPinValue+0xb0>
+ 11a:	83 30       	cpi	r24, 0x03	; 3
+ 11c:	29 f1       	breq	.+74     	; 0x168 <DIO_voidSetPinValue+0xc8>
+ 11e:	08 95       	ret
+ 120:	2b b3       	in	r18, 0x1b	; 27
+ 122:	81 e0       	ldi	r24, 0x01	; 1
+ 124:	90 e0       	ldi	r25, 0x00	; 0
+ 126:	02 c0       	rjmp	.+4      	; 0x12c <DIO_voidSetPinValue+0x8c>
+ 128:	88 0f       	add	r24, r24
+ 12a:	99 1f       	adc	r25, r25
+ 12c:	6a 95       	dec	r22
+ 12e:	e2 f7       	brpl	.-8      	; 0x128 <DIO_voidSetPinValue+0x88>
+ 130:	80 95       	com	r24
+ 132:	82 23       	and	r24, r18
+ 134:	8b bb       	out	0x1b, r24	; 27
+ 136:	08 95       	ret
+ 138:	28 b3       	in	r18, 0x18	; 24
+ 13a:	81 e0       	ldi	r24, 0x01	; 1
+ 13c:	90 e0       	ldi	r25, 0x00	; 0
+ 13e:	02 c0       	rjmp	.+4      	; 0x144 <DIO_voidSetPinValue+0xa4>
+ 140:	88 0f       	add	r24, r24
+ 142:	99 1f       	adc	r25, r25
+ 144:	6a 95       	dec	r22
+ 146:	e2 f7       	brpl	.-8      	; 0x140 <DIO_voidSetPinValue+0xa0>
+ 148:	80 95       	com	r24
+ 14a:	82 23       	and	r24, r18
+ 14c:	88 bb       	out	0x18, r24	; 24
+ 14e:	08 95       	ret
+ 150:	25 b3       	in	r18, 0x15	; 21
+ 152:	81 e0       	ldi	r24, 0x01	; 1
+ 154:	90 e0       	ldi	r25, 0x00	; 0
+ 156:	02 c0       	rjmp	.+4      	; 0x15c <DIO_voidSetPinValue+0xbc>
+ 158:	88 0f       	add	r24, r24
+ 15a:	99 1f       	adc	r25, r25
+ 15c:	6a 95       	dec	r22
+ 15e:	e2 f7       	brpl	.-8      	; 0x158 <DIO_voidSetPinValue+0xb8>
+ 160:	80 95       	com	r24
+ 162:	82 23       	and	r24, r18
+ 164:	85 bb       	out	0x15, r24	; 21
+ 166:	08 95       	ret
+ 168:	22 b3       	in	r18, 0x12	; 18
+ 16a:	81 e0       	ldi	r24, 0x01	; 1
+ 16c:	90 e0       	ldi	r25, 0x00	; 0
+ 16e:	02 c0       	rjmp	.+4      	; 0x174 <DIO_voidSetPinValue+0xd4>
+ 170:	88 0f       	add	r24, r24
+ 172:	99 1f       	adc	r25, r25
+ 174:	6a 95       	dec	r22
+ 176:	e2 f7       	brpl	.-8      	; 0x170 <DIO_voidSetPinValue+0xd0>
+ 178:	80 95       	com	r24
+ 17a:	82 23       	and	r24, r18
+ 17c:	82 bb       	out	0x12, r24	; 18
+ 17e:	08 95       	ret
+
+00000180 <DIO_voidSetPortDirection>:
+ */
+void DIO_voidSetPortDirection   (u8 Copy_u8PORT , u8 Copy_u8Direction )
+{
+	
+		/* Setup the port direction as required */
+		switch (Copy_u8PORT)
+ 180:	81 30       	cpi	r24, 0x01	; 1
+ 182:	41 f0       	breq	.+16     	; 0x194 <DIO_voidSetPortDirection+0x14>
+ 184:	28 f0       	brcs	.+10     	; 0x190 <DIO_voidSetPortDirection+0x10>
+ 186:	82 30       	cpi	r24, 0x02	; 2
+ 188:	39 f0       	breq	.+14     	; 0x198 <DIO_voidSetPortDirection+0x18>
+ 18a:	83 30       	cpi	r24, 0x03	; 3
+ 18c:	39 f0       	breq	.+14     	; 0x19c <DIO_voidSetPortDirection+0x1c>
+ 18e:	08 95       	ret
+		{
+			case PORTA_ID: DDRA = Copy_u8Direction; break;
+ 190:	6a bb       	out	0x1a, r22	; 26
+ 192:	08 95       	ret
+			case PORTB_ID: DDRB = Copy_u8Direction; break;
+ 194:	67 bb       	out	0x17, r22	; 23
+ 196:	08 95       	ret
+			case PORTC_ID: DDRC = Copy_u8Direction; break;
+ 198:	64 bb       	out	0x14, r22	; 20
+ 19a:	08 95       	ret
+			case PORTD_ID: DDRD = Copy_u8Direction; break;
+ 19c:	61 bb       	out	0x11, r22	; 17
+ 19e:	08 95       	ret
+
+000001a0 <main>:
+#include "STD_TYPES.h"
+#include "BUZZER.h"
+
+int main(void)
+{
+	DIO_voidSetPortDirection(PORTB_ID,PORT_OUTPUT);
+ 1a0:	6f ef       	ldi	r22, 0xFF	; 255
+ 1a2:	81 e0       	ldi	r24, 0x01	; 1
+ 1a4:	0e 94 c0 00 	call	0x180	; 0x180 <DIO_voidSetPortDirection>
+	BUZZER_OFF();
+ 1a8:	0e 94 3c 00 	call	0x78	; 0x78 <BUZZER_OFF>
+    /* Replace with your application code */
+    while (1) 
+    {
+		BUZZER_TOGGLE();
+ 1ac:	0e 94 42 00 	call	0x84	; 0x84 <BUZZER_TOGGLE>
+ 1b0:	fd cf       	rjmp	.-6      	; 0x1ac <main+0xc>
+
+000001b2 <_exit>:
+ 1b2:	f8 94       	cli
+
+000001b4 <__stop_program>:
+ 1b4:	ff cf       	rjmp	.-2      	; 0x1b4 <__stop_program>

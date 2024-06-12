@@ -193,3 +193,8 @@ void LCD_voidCursorOff()
 {
 	LCD_SendCommand(LCD_CURSOR_OFF_CMND);
 }
+
+void LCD_voidShiftDisplayLeft()
+{
+	LCD_SendCommand(LCD_SHIFT_LEFT_DISPLAY);
+}

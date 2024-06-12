@@ -16,8 +16,12 @@ APP/APP.d APP/APP.o: ../APP/APP.c \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\string.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h \
+ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdio.h \
+ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdarg.h \
+ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
  ../APP/../Lib/BIT_MATH.h ../APP/../Lib/STD_TYPES.h \
  ../APP/../MCAL/DIO/DIO.h ../APP/../MCAL/DIO/../../Lib/STD_TYPES.h \
+ ../APP/../MCAL/EXTI/EXTI.h ../APP/../MCAL/EXTI/../../Lib/STD_TYPES.h \
  ../APP/../HAL/KEYPAD/KEYPAD.h ../APP/../HAL/KEYPAD/../../Lib/STD_TYPES.h \
  ../APP/../HAL/KEYPAD/../../Lib/BIT_MATH.h \
  ../APP/../HAL/KEYPAD/../../MCAL/DIO/DIO.h ../APP/../HAL/LCD/LCD.h \
@@ -61,6 +65,12 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h:
 
+c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdio.h:
+
+c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdarg.h:
+
+c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h:
+
 ../APP/../Lib/BIT_MATH.h:
 
 ../APP/../Lib/STD_TYPES.h:
@@ -68,6 +78,10 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\
 ../APP/../MCAL/DIO/DIO.h:
 
 ../APP/../MCAL/DIO/../../Lib/STD_TYPES.h:
+
+../APP/../MCAL/EXTI/EXTI.h:
+
+../APP/../MCAL/EXTI/../../Lib/STD_TYPES.h:
 
 ../APP/../HAL/KEYPAD/KEYPAD.h:
 

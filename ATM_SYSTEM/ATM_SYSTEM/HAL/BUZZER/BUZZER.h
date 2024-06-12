@@ -2,7 +2,7 @@
  * BUZZER.h
  *
  * Created: 6/10/2024 11:54:13 PM
- *  Author: hp
+ *  Author: Jana Wael
  */ 
 
 
@@ -11,11 +11,15 @@
 
 #include "../../MCAL/DIO/DIO.h"
 
-#define BUZZER_PORT		PORTB_ID
-#define BUZZER_PIN		PIN5_ID
+#define NUM_OF_BUZZERS		3
+
+#define BUZZER_WARNING		0
+#define BUZZER_PROCEEDING	1
+#define BUZZER_DEPOSITING	2
 
 void BUZZER_Init();
-void BUZZER_ON();
-void BUZZER_OFF();
+void BUZZER_ON(u8 BUZZER_ID);
+void BUZZER_OFF(u8 BUZZER_ID);
+void BUZZER_TOGGLE(u8 BUZZER_ID);
 
 #endif /* BUZZER_H_ */

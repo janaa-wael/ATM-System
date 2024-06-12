@@ -16,8 +16,6 @@
 
 /* LCD Data bits mode configuration, its value should be 4 or 8*/
 #define LCD_INITIALIZATION_8_BIT_MODE			8
-
-
 /*************************************** CONTROL PINS MACROS ***************************************/
 #define CTRL_PORT					PORTD_ID
 #define CTRL_PORT_DIR				0x07
@@ -40,13 +38,15 @@
 #define LCD_CLEAR_CMND						0x01
 #define LCD_CURSOR_OFF_CMND					0x0C
 #define LCD_ENTRY_MODE_SET_CMND				0x06
-#define LCD_JUMP_TO_2ND_LINE_CMND		0xC0
+#define LCD_JUMP_TO_2ND_LINE_CMND			0xC0
+#define LCD_SHIFT_LEFT_DISPLAY				0x18
 /*********************************** LCD FUNCTIONS PROTOTYPES **************************************/
 void LCD_voidInit(void);
 void LCD_voidSendData(char character);
 void LCD_voidSendString(char *str);
 void LCD_SendCommand(char Data_Value);
 void LCD_voidClearScreen(void);
+void LCD_voidShiftDisplayLeft();
 void LCD_voidSetCursor(u8 row, u8 col);
 void LCD_voidSetStringPos(u8 row, u8 col, u8 *str);
 void LCD_voidSetDataPos(u8 row, u8 col, u8 character);
