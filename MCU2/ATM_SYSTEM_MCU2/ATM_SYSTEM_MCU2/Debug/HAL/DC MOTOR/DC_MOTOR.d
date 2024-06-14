@@ -1,0 +1,16 @@
+HAL/DC MOTOR/DC_MOTOR.d HAL/DC MOTOR/DC_MOTOR.o: \
+ ../HAL/DC\ MOTOR/DC_MOTOR.c ../HAL/DC\ MOTOR/../../Lib/BIT_MATH.h \
+ ../HAL/DC\ MOTOR/../../Lib/STD_TYPES.h \
+ ../HAL/DC\ MOTOR/../../MCAL/DIO/DIO.h \
+ ../HAL/DC\ MOTOR/../../MCAL/DIO/../../Lib/STD_TYPES.h \
+ ../HAL/DC\ MOTOR/DC_MOTOR.h
+
+../HAL/DC\ MOTOR/../../Lib/BIT_MATH.h:
+
+../HAL/DC\ MOTOR/../../Lib/STD_TYPES.h:
+
+../HAL/DC\ MOTOR/../../MCAL/DIO/DIO.h:
+
+../HAL/DC\ MOTOR/../../MCAL/DIO/../../Lib/STD_TYPES.h:
+
+../HAL/DC\ MOTOR/DC_MOTOR.h:
