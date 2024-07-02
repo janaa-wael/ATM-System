@@ -23,10 +23,16 @@
 
 int main(void)
 {
+	MCAL_init();
 	HAL_Init();
 	APP_voidWelcomeMessage();
 	APP_voidCheckPassword();
+	EXTI_voidDisableInterrupt();
 	while(1)
-		APP_voidPrintMenu();
+	{
+			APP_voidPrintMenu();
+			EXTI_void_GLOABALINT_ENAB();
+			APP_voidADCSendTempUsingUart();
+	}
 }
 

@@ -3,55 +3,55 @@ ATM_SYSTEM_MCU2.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         000002a0  00000000  00000000  00000054  2**1
+  0 .text         00000374  00000000  00000000  00000054  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .data         00000000  00800060  00800060  000002f4  2**0
+  1 .data         00000000  00800060  00800060  000003c8  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  2 .comment      00000030  00000000  00000000  000002f4  2**0
+  2 .comment      00000030  00000000  00000000  000003c8  2**0
                   CONTENTS, READONLY
-  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000324  2**2
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000003f8  2**2
                   CONTENTS, READONLY
-  4 .debug_aranges 000000c8  00000000  00000000  00000360  2**0
+  4 .debug_aranges 00000108  00000000  00000000  00000434  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_info   00000d21  00000000  00000000  00000428  2**0
+  5 .debug_info   0000105f  00000000  00000000  0000053c  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_abbrev 000007a9  00000000  00000000  00001149  2**0
+  6 .debug_abbrev 00000978  00000000  00000000  0000159b  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_line   00000746  00000000  00000000  000018f2  2**0
+  7 .debug_line   000009af  00000000  00000000  00001f13  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_frame  00000120  00000000  00000000  00002038  2**2
+  8 .debug_frame  00000190  00000000  00000000  000028c4  2**2
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_str    000004ca  00000000  00000000  00002158  2**0
+  9 .debug_str    00000574  00000000  00000000  00002a54  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_loc    00000487  00000000  00000000  00002622  2**0
+ 10 .debug_loc    00000650  00000000  00000000  00002fc8  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_ranges 00000088  00000000  00000000  00002aa9  2**0
+ 11 .debug_ranges 000000b8  00000000  00000000  00003618  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
 
 00000000 <__vectors>:
    0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
-   4:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-   8:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-   c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  10:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  14:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  18:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  1c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  20:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  24:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  28:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  2c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  30:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  34:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  38:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  3c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  40:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  44:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  48:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  4c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  50:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+   4:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+   8:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+   c:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  10:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  14:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  18:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  1c:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  20:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  24:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  28:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  2c:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  30:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  34:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  38:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  3c:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  40:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  44:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  48:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  4c:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  50:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
 
 00000054 <__ctors_end>:
   54:	11 24       	eor	r1, r1
@@ -60,423 +60,562 @@ Disassembly of section .text:
   5a:	d8 e0       	ldi	r29, 0x08	; 8
   5c:	de bf       	out	0x3e, r29	; 62
   5e:	cd bf       	out	0x3d, r28	; 61
-  60:	0e 94 36 00 	call	0x6c	; 0x6c <main>
-  64:	0c 94 4e 01 	jmp	0x29c	; 0x29c <_exit>
 
-00000068 <__bad_interrupt>:
-  68:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+00000060 <__do_copy_data>:
+  60:	10 e0       	ldi	r17, 0x00	; 0
+  62:	a0 e6       	ldi	r26, 0x60	; 96
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+  66:	e4 e7       	ldi	r30, 0x74	; 116
+  68:	f3 e0       	ldi	r31, 0x03	; 3
+  6a:	02 c0       	rjmp	.+4      	; 0x70 <__do_copy_data+0x10>
+  6c:	05 90       	lpm	r0, Z+
+  6e:	0d 92       	st	X+, r0
+  70:	a0 36       	cpi	r26, 0x60	; 96
+  72:	b1 07       	cpc	r27, r17
+  74:	d9 f7       	brne	.-10     	; 0x6c <__do_copy_data+0xc>
+  76:	0e 94 41 00 	call	0x82	; 0x82 <main>
+  7a:	0c 94 b8 01 	jmp	0x370	; 0x370 <_exit>
 
-0000006c <main>:
-#include "../Lib/BIT_MATH.h"
+0000007e <__bad_interrupt>:
+  7e:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000082 <main>:
 #include "../MCAL/Timer/Timer.h"
+#include "../MCAL/UART/UART.h"
 #include "../HAL/DC MOTOR/DC_MOTOR.h"
 
 int main() {
 	PWM_voidInit(); // Initialize PWM
-  6c:	0e 94 45 01 	call	0x28a	; 0x28a <PWM_voidInit>
+  82:	0e 94 68 01 	call	0x2d0	; 0x2d0 <PWM_voidInit>
 	MOTORS_voidInit(); // Initialize motor control pins
-  70:	0e 94 8c 00 	call	0x118	; 0x118 <MOTORS_voidInit>
-
+  86:	0e 94 a9 00 	call	0x152	; 0x152 <MOTORS_voidInit>
+	UART_init(9600);
+  8a:	60 e8       	ldi	r22, 0x80	; 128
+  8c:	75 e2       	ldi	r23, 0x25	; 37
+  8e:	80 e0       	ldi	r24, 0x00	; 0
+  90:	90 e0       	ldi	r25, 0x00	; 0
+  92:	0e 94 71 01 	call	0x2e2	; 0x2e2 <UART_init>
+	
 	while(1) {
-		MOTOR1_voidSetDirection(CLOCKWISE_DIR); // Set direction
-  74:	80 e0       	ldi	r24, 0x00	; 0
-  76:	0e 94 95 00 	call	0x12a	; 0x12a <MOTOR1_voidSetDirection>
-		MOTOR2_voidSetDirection(ANTIOCLOCKWISE_DIR);
-  7a:	81 e0       	ldi	r24, 0x01	; 1
-  7c:	0e 94 ad 00 	call	0x15a	; 0x15a <MOTOR2_voidSetDirection>
-		for(uint8_t i = 0; i < 255; i++) {
-  80:	c0 e0       	ldi	r28, 0x00	; 0
-  82:	0e c0       	rjmp	.+28     	; 0xa0 <main+0x34>
-			PWM_voidSetDutyCycle_OC0(i); // Increase speed
-  84:	8c 2f       	mov	r24, r28
-  86:	0e 94 4a 01 	call	0x294	; 0x294 <PWM_voidSetDutyCycle_OC0>
-			PWM_voidSetDutyCycle_OC2(i);
-  8a:	8c 2f       	mov	r24, r28
-  8c:	90 e0       	ldi	r25, 0x00	; 0
-  8e:	0e 94 4c 01 	call	0x298	; 0x298 <PWM_voidSetDutyCycle_OC2>
+		u8 received_byte = UART_recieveByte();
+  96:	0e 94 92 01 	call	0x324	; 0x324 <UART_recieveByte>
+		if(received_byte == 'd')
+  9a:	84 36       	cpi	r24, 0x64	; 100
+  9c:	61 f5       	brne	.+88     	; 0xf6 <main+0x74>
+		{
+					MOTOR_voidSetDirection(MOTOR1,CLOCKWISE_DIR); // Set direction
+  9e:	60 e0       	ldi	r22, 0x00	; 0
+  a0:	81 e0       	ldi	r24, 0x01	; 1
+  a2:	0e 94 b6 00 	call	0x16c	; 0x16c <MOTOR_voidSetDirection>
+					MOTOR_voidSetDirection(MOTOR2,ANTIOCLOCKWISE_DIR);
+  a6:	61 e0       	ldi	r22, 0x01	; 1
+  a8:	82 e0       	ldi	r24, 0x02	; 2
+  aa:	0e 94 b6 00 	call	0x16c	; 0x16c <MOTOR_voidSetDirection>
+					for(uint8_t i = 0; i < 255; i++) {
+  ae:	c0 e0       	ldi	r28, 0x00	; 0
+  b0:	0e c0       	rjmp	.+28     	; 0xce <main+0x4c>
+						PWM_voidSetDutyCycle_OC0(i); // Increase speed
+  b2:	8c 2f       	mov	r24, r28
+  b4:	0e 94 6d 01 	call	0x2da	; 0x2da <PWM_voidSetDutyCycle_OC0>
+						PWM_voidSetDutyCycle_OC2(i);
+  b8:	8c 2f       	mov	r24, r28
+  ba:	90 e0       	ldi	r25, 0x00	; 0
+  bc:	0e 94 6f 01 	call	0x2de	; 0x2de <PWM_voidSetDutyCycle_OC2>
 	#else
 		//round up by default
 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
 	#endif
 
 	__builtin_avr_delay_cycles(__ticks_dc);
-  92:	83 ec       	ldi	r24, 0xC3	; 195
-  94:	99 e0       	ldi	r25, 0x09	; 9
-  96:	01 97       	sbiw	r24, 0x01	; 1
-  98:	f1 f7       	brne	.-4      	; 0x96 <main+0x2a>
-  9a:	00 c0       	rjmp	.+0      	; 0x9c <main+0x30>
-  9c:	00 00       	nop
-	MOTORS_voidInit(); // Initialize motor control pins
-
-	while(1) {
-		MOTOR1_voidSetDirection(CLOCKWISE_DIR); // Set direction
-		MOTOR2_voidSetDirection(ANTIOCLOCKWISE_DIR);
-		for(uint8_t i = 0; i < 255; i++) {
-  9e:	cf 5f       	subi	r28, 0xFF	; 255
-  a0:	cf 3f       	cpi	r28, 0xFF	; 255
-  a2:	81 f7       	brne	.-32     	; 0x84 <main+0x18>
-  a4:	0e c0       	rjmp	.+28     	; 0xc2 <main+0x56>
-			PWM_voidSetDutyCycle_OC0(i); // Increase speed
-			PWM_voidSetDutyCycle_OC2(i);
-			_delay_ms(10);
-		}
-		for(uint8_t i = 255; i > 0; i--) {
-			PWM_voidSetDutyCycle_OC0(i); // Decrease speed
-  a6:	8c 2f       	mov	r24, r28
-  a8:	0e 94 4a 01 	call	0x294	; 0x294 <PWM_voidSetDutyCycle_OC0>
-			PWM_voidSetDutyCycle_OC2(i);
-  ac:	8c 2f       	mov	r24, r28
-  ae:	90 e0       	ldi	r25, 0x00	; 0
-  b0:	0e 94 4c 01 	call	0x298	; 0x298 <PWM_voidSetDutyCycle_OC2>
-  b4:	83 ec       	ldi	r24, 0xC3	; 195
-  b6:	99 e0       	ldi	r25, 0x09	; 9
-  b8:	01 97       	sbiw	r24, 0x01	; 1
-  ba:	f1 f7       	brne	.-4      	; 0xb8 <main+0x4c>
-  bc:	00 c0       	rjmp	.+0      	; 0xbe <main+0x52>
-  be:	00 00       	nop
-		for(uint8_t i = 0; i < 255; i++) {
-			PWM_voidSetDutyCycle_OC0(i); // Increase speed
-			PWM_voidSetDutyCycle_OC2(i);
-			_delay_ms(10);
-		}
-		for(uint8_t i = 255; i > 0; i--) {
-  c0:	c1 50       	subi	r28, 0x01	; 1
-  c2:	c1 11       	cpse	r28, r1
-  c4:	f0 cf       	rjmp	.-32     	; 0xa6 <main+0x3a>
-			PWM_voidSetDutyCycle_OC0(i); // Decrease speed
-			PWM_voidSetDutyCycle_OC2(i);
-			_delay_ms(10);
-		}
-
-		MOTOR1_voidSetDirection(ANTIOCLOCKWISE_DIR); // Change direction
-  c6:	81 e0       	ldi	r24, 0x01	; 1
-  c8:	0e 94 95 00 	call	0x12a	; 0x12a <MOTOR1_voidSetDirection>
-		MOTOR2_voidSetDirection(CLOCKWISE_DIR);
-  cc:	80 e0       	ldi	r24, 0x00	; 0
-  ce:	0e 94 ad 00 	call	0x15a	; 0x15a <MOTOR2_voidSetDirection>
-		for(uint8_t i = 0; i < 255; i++) {
-  d2:	0e c0       	rjmp	.+28     	; 0xf0 <main+0x84>
-			PWM_voidSetDutyCycle_OC0(i); // Increase speed
+  c0:	83 ec       	ldi	r24, 0xC3	; 195
+  c2:	99 e0       	ldi	r25, 0x09	; 9
+  c4:	01 97       	sbiw	r24, 0x01	; 1
+  c6:	f1 f7       	brne	.-4      	; 0xc4 <main+0x42>
+  c8:	00 c0       	rjmp	.+0      	; 0xca <main+0x48>
+  ca:	00 00       	nop
+		u8 received_byte = UART_recieveByte();
+		if(received_byte == 'd')
+		{
+					MOTOR_voidSetDirection(MOTOR1,CLOCKWISE_DIR); // Set direction
+					MOTOR_voidSetDirection(MOTOR2,ANTIOCLOCKWISE_DIR);
+					for(uint8_t i = 0; i < 255; i++) {
+  cc:	cf 5f       	subi	r28, 0xFF	; 255
+  ce:	cf 3f       	cpi	r28, 0xFF	; 255
+  d0:	81 f7       	brne	.-32     	; 0xb2 <main+0x30>
+  d2:	0e c0       	rjmp	.+28     	; 0xf0 <main+0x6e>
+						PWM_voidSetDutyCycle_OC0(i); // Increase speed
+						PWM_voidSetDutyCycle_OC2(i);
+						_delay_ms(10);
+					}
+					for(uint8_t i = 255; i > 0; i--) {
+						PWM_voidSetDutyCycle_OC0(i); // Decrease speed
   d4:	8c 2f       	mov	r24, r28
-  d6:	0e 94 4a 01 	call	0x294	; 0x294 <PWM_voidSetDutyCycle_OC0>
-			PWM_voidSetDutyCycle_OC2(i);
+  d6:	0e 94 6d 01 	call	0x2da	; 0x2da <PWM_voidSetDutyCycle_OC0>
+						PWM_voidSetDutyCycle_OC2(i);
   da:	8c 2f       	mov	r24, r28
   dc:	90 e0       	ldi	r25, 0x00	; 0
-  de:	0e 94 4c 01 	call	0x298	; 0x298 <PWM_voidSetDutyCycle_OC2>
+  de:	0e 94 6f 01 	call	0x2de	; 0x2de <PWM_voidSetDutyCycle_OC2>
   e2:	83 ec       	ldi	r24, 0xC3	; 195
   e4:	99 e0       	ldi	r25, 0x09	; 9
   e6:	01 97       	sbiw	r24, 0x01	; 1
-  e8:	f1 f7       	brne	.-4      	; 0xe6 <main+0x7a>
-  ea:	00 c0       	rjmp	.+0      	; 0xec <main+0x80>
+  e8:	f1 f7       	brne	.-4      	; 0xe6 <main+0x64>
+  ea:	00 c0       	rjmp	.+0      	; 0xec <main+0x6a>
   ec:	00 00       	nop
-			_delay_ms(10);
+					for(uint8_t i = 0; i < 255; i++) {
+						PWM_voidSetDutyCycle_OC0(i); // Increase speed
+						PWM_voidSetDutyCycle_OC2(i);
+						_delay_ms(10);
+					}
+					for(uint8_t i = 255; i > 0; i--) {
+  ee:	c1 50       	subi	r28, 0x01	; 1
+  f0:	c1 11       	cpse	r28, r1
+  f2:	f0 cf       	rjmp	.-32     	; 0xd4 <main+0x52>
+  f4:	d0 cf       	rjmp	.-96     	; 0x96 <main+0x14>
+						PWM_voidSetDutyCycle_OC0(i); // Decrease speed
+						PWM_voidSetDutyCycle_OC2(i);
+						_delay_ms(10);
+					}
 		}
+		else if (received_byte == 'w')
+  f6:	87 37       	cpi	r24, 0x77	; 119
+  f8:	71 f6       	brne	.-100    	; 0x96 <main+0x14>
+		{
+			MOTOR_voidSetDirection(MOTOR1,ANTIOCLOCKWISE_DIR); // Change direction
+  fa:	61 e0       	ldi	r22, 0x01	; 1
+  fc:	81 e0       	ldi	r24, 0x01	; 1
+  fe:	0e 94 b6 00 	call	0x16c	; 0x16c <MOTOR_voidSetDirection>
+			MOTOR_voidSetDirection(MOTOR2,CLOCKWISE_DIR);
+ 102:	60 e0       	ldi	r22, 0x00	; 0
+ 104:	82 e0       	ldi	r24, 0x02	; 2
+ 106:	0e 94 b6 00 	call	0x16c	; 0x16c <MOTOR_voidSetDirection>
+			for(uint8_t i = 0; i < 255; i++) {
+ 10a:	c0 e0       	ldi	r28, 0x00	; 0
+ 10c:	0e c0       	rjmp	.+28     	; 0x12a <main+0xa8>
+				PWM_voidSetDutyCycle_OC0(i); // Increase speed
+ 10e:	8c 2f       	mov	r24, r28
+ 110:	0e 94 6d 01 	call	0x2da	; 0x2da <PWM_voidSetDutyCycle_OC0>
+				PWM_voidSetDutyCycle_OC2(i);
+ 114:	8c 2f       	mov	r24, r28
+ 116:	90 e0       	ldi	r25, 0x00	; 0
+ 118:	0e 94 6f 01 	call	0x2de	; 0x2de <PWM_voidSetDutyCycle_OC2>
+ 11c:	83 ec       	ldi	r24, 0xC3	; 195
+ 11e:	99 e0       	ldi	r25, 0x09	; 9
+ 120:	01 97       	sbiw	r24, 0x01	; 1
+ 122:	f1 f7       	brne	.-4      	; 0x120 <main+0x9e>
+ 124:	00 c0       	rjmp	.+0      	; 0x126 <main+0xa4>
+ 126:	00 00       	nop
+		}
+		else if (received_byte == 'w')
+		{
+			MOTOR_voidSetDirection(MOTOR1,ANTIOCLOCKWISE_DIR); // Change direction
+			MOTOR_voidSetDirection(MOTOR2,CLOCKWISE_DIR);
+			for(uint8_t i = 0; i < 255; i++) {
+ 128:	cf 5f       	subi	r28, 0xFF	; 255
+ 12a:	cf 3f       	cpi	r28, 0xFF	; 255
+ 12c:	81 f7       	brne	.-32     	; 0x10e <main+0x8c>
+ 12e:	0e c0       	rjmp	.+28     	; 0x14c <main+0xca>
+				PWM_voidSetDutyCycle_OC0(i); // Increase speed
+				PWM_voidSetDutyCycle_OC2(i);
+				_delay_ms(10);
+			}
+			for(uint8_t i = 255; i > 0; i--) {
+				PWM_voidSetDutyCycle_OC0(i); // Decrease speed
+ 130:	8c 2f       	mov	r24, r28
+ 132:	0e 94 6d 01 	call	0x2da	; 0x2da <PWM_voidSetDutyCycle_OC0>
+				PWM_voidSetDutyCycle_OC2(i);
+ 136:	8c 2f       	mov	r24, r28
+ 138:	90 e0       	ldi	r25, 0x00	; 0
+ 13a:	0e 94 6f 01 	call	0x2de	; 0x2de <PWM_voidSetDutyCycle_OC2>
+ 13e:	83 ec       	ldi	r24, 0xC3	; 195
+ 140:	99 e0       	ldi	r25, 0x09	; 9
+ 142:	01 97       	sbiw	r24, 0x01	; 1
+ 144:	f1 f7       	brne	.-4      	; 0x142 <main+0xc0>
+ 146:	00 c0       	rjmp	.+0      	; 0x148 <main+0xc6>
+ 148:	00 00       	nop
+			for(uint8_t i = 0; i < 255; i++) {
+				PWM_voidSetDutyCycle_OC0(i); // Increase speed
+				PWM_voidSetDutyCycle_OC2(i);
+				_delay_ms(10);
+			}
+			for(uint8_t i = 255; i > 0; i--) {
+ 14a:	c1 50       	subi	r28, 0x01	; 1
+ 14c:	c1 11       	cpse	r28, r1
+ 14e:	f0 cf       	rjmp	.-32     	; 0x130 <main+0xae>
+ 150:	a2 cf       	rjmp	.-188    	; 0x96 <main+0x14>
 
-		MOTOR1_voidSetDirection(ANTIOCLOCKWISE_DIR); // Change direction
-		MOTOR2_voidSetDirection(CLOCKWISE_DIR);
-		for(uint8_t i = 0; i < 255; i++) {
-  ee:	cf 5f       	subi	r28, 0xFF	; 255
-  f0:	cf 3f       	cpi	r28, 0xFF	; 255
-  f2:	81 f7       	brne	.-32     	; 0xd4 <main+0x68>
-  f4:	0e c0       	rjmp	.+28     	; 0x112 <main+0xa6>
-			PWM_voidSetDutyCycle_OC0(i); // Increase speed
-			PWM_voidSetDutyCycle_OC2(i);
-			_delay_ms(10);
-		}
-		for(uint8_t i = 255; i > 0; i--) {
-			PWM_voidSetDutyCycle_OC0(i); // Decrease speed
-  f6:	8c 2f       	mov	r24, r28
-  f8:	0e 94 4a 01 	call	0x294	; 0x294 <PWM_voidSetDutyCycle_OC0>
-			PWM_voidSetDutyCycle_OC2(i);
-  fc:	8c 2f       	mov	r24, r28
-  fe:	90 e0       	ldi	r25, 0x00	; 0
- 100:	0e 94 4c 01 	call	0x298	; 0x298 <PWM_voidSetDutyCycle_OC2>
- 104:	83 ec       	ldi	r24, 0xC3	; 195
- 106:	99 e0       	ldi	r25, 0x09	; 9
- 108:	01 97       	sbiw	r24, 0x01	; 1
- 10a:	f1 f7       	brne	.-4      	; 0x108 <main+0x9c>
- 10c:	00 c0       	rjmp	.+0      	; 0x10e <main+0xa2>
- 10e:	00 00       	nop
-		for(uint8_t i = 0; i < 255; i++) {
-			PWM_voidSetDutyCycle_OC0(i); // Increase speed
-			PWM_voidSetDutyCycle_OC2(i);
-			_delay_ms(10);
-		}
-		for(uint8_t i = 255; i > 0; i--) {
- 110:	c1 50       	subi	r28, 0x01	; 1
- 112:	c1 11       	cpse	r28, r1
- 114:	f0 cf       	rjmp	.-32     	; 0xf6 <main+0x8a>
- 116:	ae cf       	rjmp	.-164    	; 0x74 <main+0x8>
+00000152 <MOTORS_voidInit>:
 
-00000118 <MOTORS_voidInit>:
-#include "../../MCAL/DIO/DIO.h"
 #include "DC_MOTOR.h"
 
 void MOTORS_voidInit()
 {
 	DIO_voidSetPortDirection(MOTOR1_DRIVE_PORT,PORT_OUTPUT);
- 118:	6f ef       	ldi	r22, 0xFF	; 255
- 11a:	81 e0       	ldi	r24, 0x01	; 1
- 11c:	0e 94 35 01 	call	0x26a	; 0x26a <DIO_voidSetPortDirection>
+ 152:	6f ef       	ldi	r22, 0xFF	; 255
+ 154:	81 e0       	ldi	r24, 0x01	; 1
+ 156:	0e 94 58 01 	call	0x2b0	; 0x2b0 <DIO_voidSetPortDirection>
 	DIO_voidSetPortDirection(MOTOR2_DRIVE_PORT,PORT_OUTPUT);
- 120:	6f ef       	ldi	r22, 0xFF	; 255
- 122:	83 e0       	ldi	r24, 0x03	; 3
- 124:	0e 94 35 01 	call	0x26a	; 0x26a <DIO_voidSetPortDirection>
- 128:	08 95       	ret
+ 15a:	6f ef       	ldi	r22, 0xFF	; 255
+ 15c:	83 e0       	ldi	r24, 0x03	; 3
+ 15e:	0e 94 58 01 	call	0x2b0	; 0x2b0 <DIO_voidSetPortDirection>
+	DIO_voidSetPortDirection(MOTOR3_DRIVE_PORT,PORT_OUTPUT);
+ 162:	6f ef       	ldi	r22, 0xFF	; 255
+ 164:	80 e0       	ldi	r24, 0x00	; 0
+ 166:	0e 94 58 01 	call	0x2b0	; 0x2b0 <DIO_voidSetPortDirection>
+ 16a:	08 95       	ret
 
-0000012a <MOTOR1_voidSetDirection>:
-
-}
-void MOTOR1_voidSetDirection(u8 direction)
-{
-	if(direction == CLOCKWISE_DIR)
- 12a:	81 11       	cpse	r24, r1
- 12c:	0b c0       	rjmp	.+22     	; 0x144 <MOTOR1_voidSetDirection+0x1a>
-	{
-		DIO_voidSetPinValue(MOTOR1_DRIVE_PORT,IN1,PIN_HIGH);
- 12e:	41 e0       	ldi	r20, 0x01	; 1
- 130:	60 e0       	ldi	r22, 0x00	; 0
- 132:	81 e0       	ldi	r24, 0x01	; 1
- 134:	0e 94 c5 00 	call	0x18a	; 0x18a <DIO_voidSetPinValue>
-		DIO_voidSetPinValue(MOTOR1_DRIVE_PORT,IN2,PIN_LOW);
- 138:	40 e0       	ldi	r20, 0x00	; 0
- 13a:	61 e0       	ldi	r22, 0x01	; 1
- 13c:	81 e0       	ldi	r24, 0x01	; 1
- 13e:	0e 94 c5 00 	call	0x18a	; 0x18a <DIO_voidSetPinValue>
- 142:	08 95       	ret
-	}
-	else
-	{
-		DIO_voidSetPinValue(MOTOR1_DRIVE_PORT,IN2,PIN_HIGH);
- 144:	41 e0       	ldi	r20, 0x01	; 1
- 146:	61 e0       	ldi	r22, 0x01	; 1
- 148:	81 e0       	ldi	r24, 0x01	; 1
- 14a:	0e 94 c5 00 	call	0x18a	; 0x18a <DIO_voidSetPinValue>
-		DIO_voidSetPinValue(MOTOR1_DRIVE_PORT,IN1,PIN_LOW);
- 14e:	40 e0       	ldi	r20, 0x00	; 0
- 150:	60 e0       	ldi	r22, 0x00	; 0
- 152:	81 e0       	ldi	r24, 0x01	; 1
- 154:	0e 94 c5 00 	call	0x18a	; 0x18a <DIO_voidSetPinValue>
- 158:	08 95       	ret
-
-0000015a <MOTOR2_voidSetDirection>:
-	}
+0000016c <MOTOR_voidSetDirection>:
 }
 
-void MOTOR2_voidSetDirection(u8 direction)
+void MOTOR_voidSetDirection(u8 MOTOR, u8 direction)
 {
-	if(direction == CLOCKWISE_DIR)
- 15a:	81 11       	cpse	r24, r1
- 15c:	0b c0       	rjmp	.+22     	; 0x174 <MOTOR2_voidSetDirection+0x1a>
+	if(MOTOR == MOTOR1)
+ 16c:	81 30       	cpi	r24, 0x01	; 1
+ 16e:	b1 f4       	brne	.+44     	; 0x19c <MOTOR_voidSetDirection+0x30>
 	{
-		DIO_voidSetPinValue(MOTOR2_DRIVE_PORT,IN3,PIN_HIGH);
- 15e:	41 e0       	ldi	r20, 0x01	; 1
- 160:	63 e0       	ldi	r22, 0x03	; 3
- 162:	83 e0       	ldi	r24, 0x03	; 3
- 164:	0e 94 c5 00 	call	0x18a	; 0x18a <DIO_voidSetPinValue>
-		DIO_voidSetPinValue(MOTOR2_DRIVE_PORT,IN4,PIN_LOW);
- 168:	40 e0       	ldi	r20, 0x00	; 0
- 16a:	66 e0       	ldi	r22, 0x06	; 6
- 16c:	83 e0       	ldi	r24, 0x03	; 3
- 16e:	0e 94 c5 00 	call	0x18a	; 0x18a <DIO_voidSetPinValue>
- 172:	08 95       	ret
+			if(direction == CLOCKWISE_DIR)
+ 170:	61 11       	cpse	r22, r1
+ 172:	09 c0       	rjmp	.+18     	; 0x186 <MOTOR_voidSetDirection+0x1a>
+			{
+				DIO_voidSetPinValue(MOTOR1_DRIVE_PORT,IN1,PIN_HIGH);
+ 174:	41 e0       	ldi	r20, 0x01	; 1
+ 176:	0e 94 e8 00 	call	0x1d0	; 0x1d0 <DIO_voidSetPinValue>
+				DIO_voidSetPinValue(MOTOR1_DRIVE_PORT,IN2,PIN_LOW);
+ 17a:	40 e0       	ldi	r20, 0x00	; 0
+ 17c:	61 e0       	ldi	r22, 0x01	; 1
+ 17e:	81 e0       	ldi	r24, 0x01	; 1
+ 180:	0e 94 e8 00 	call	0x1d0	; 0x1d0 <DIO_voidSetPinValue>
+ 184:	08 95       	ret
+			}
+			else
+			{
+				DIO_voidSetPinValue(MOTOR1_DRIVE_PORT,IN2,PIN_HIGH);
+ 186:	41 e0       	ldi	r20, 0x01	; 1
+ 188:	61 e0       	ldi	r22, 0x01	; 1
+ 18a:	81 e0       	ldi	r24, 0x01	; 1
+ 18c:	0e 94 e8 00 	call	0x1d0	; 0x1d0 <DIO_voidSetPinValue>
+				DIO_voidSetPinValue(MOTOR1_DRIVE_PORT,IN1,PIN_LOW);
+ 190:	40 e0       	ldi	r20, 0x00	; 0
+ 192:	60 e0       	ldi	r22, 0x00	; 0
+ 194:	81 e0       	ldi	r24, 0x01	; 1
+ 196:	0e 94 e8 00 	call	0x1d0	; 0x1d0 <DIO_voidSetPinValue>
+ 19a:	08 95       	ret
+			}
 	}
-	else
+	else if(MOTOR == MOTOR2)
+ 19c:	82 30       	cpi	r24, 0x02	; 2
+ 19e:	b9 f4       	brne	.+46     	; 0x1ce <MOTOR_voidSetDirection+0x62>
 	{
-		DIO_voidSetPinValue(MOTOR2_DRIVE_PORT,IN3,PIN_LOW);
- 174:	40 e0       	ldi	r20, 0x00	; 0
- 176:	63 e0       	ldi	r22, 0x03	; 3
- 178:	83 e0       	ldi	r24, 0x03	; 3
- 17a:	0e 94 c5 00 	call	0x18a	; 0x18a <DIO_voidSetPinValue>
-		DIO_voidSetPinValue(MOTOR2_DRIVE_PORT,IN4,PIN_HIGH);
- 17e:	41 e0       	ldi	r20, 0x01	; 1
- 180:	66 e0       	ldi	r22, 0x06	; 6
- 182:	83 e0       	ldi	r24, 0x03	; 3
- 184:	0e 94 c5 00 	call	0x18a	; 0x18a <DIO_voidSetPinValue>
- 188:	08 95       	ret
+			if(direction == CLOCKWISE_DIR)
+ 1a0:	61 11       	cpse	r22, r1
+ 1a2:	0b c0       	rjmp	.+22     	; 0x1ba <MOTOR_voidSetDirection+0x4e>
+			{
+				DIO_voidSetPinValue(MOTOR2_DRIVE_PORT,IN3,PIN_HIGH);
+ 1a4:	41 e0       	ldi	r20, 0x01	; 1
+ 1a6:	63 e0       	ldi	r22, 0x03	; 3
+ 1a8:	83 e0       	ldi	r24, 0x03	; 3
+ 1aa:	0e 94 e8 00 	call	0x1d0	; 0x1d0 <DIO_voidSetPinValue>
+				DIO_voidSetPinValue(MOTOR2_DRIVE_PORT,IN4,PIN_LOW);
+ 1ae:	40 e0       	ldi	r20, 0x00	; 0
+ 1b0:	66 e0       	ldi	r22, 0x06	; 6
+ 1b2:	83 e0       	ldi	r24, 0x03	; 3
+ 1b4:	0e 94 e8 00 	call	0x1d0	; 0x1d0 <DIO_voidSetPinValue>
+ 1b8:	08 95       	ret
+			}
+			else
+			{
+				DIO_voidSetPinValue(MOTOR2_DRIVE_PORT,IN3,PIN_LOW);
+ 1ba:	40 e0       	ldi	r20, 0x00	; 0
+ 1bc:	63 e0       	ldi	r22, 0x03	; 3
+ 1be:	83 e0       	ldi	r24, 0x03	; 3
+ 1c0:	0e 94 e8 00 	call	0x1d0	; 0x1d0 <DIO_voidSetPinValue>
+				DIO_voidSetPinValue(MOTOR2_DRIVE_PORT,IN4,PIN_HIGH);
+ 1c4:	41 e0       	ldi	r20, 0x01	; 1
+ 1c6:	66 e0       	ldi	r22, 0x06	; 6
+ 1c8:	83 e0       	ldi	r24, 0x03	; 3
+ 1ca:	0e 94 e8 00 	call	0x1d0	; 0x1d0 <DIO_voidSetPinValue>
+ 1ce:	08 95       	ret
 
-0000018a <DIO_voidSetPinValue>:
+000001d0 <DIO_voidSetPinValue>:
 		case PORTA_ID: return GET_BIT(PINA,Copy_u8PIN);
 		case PORTB_ID: return GET_BIT(PINB,Copy_u8PIN);
 		case PORTC_ID: return GET_BIT(PINC,Copy_u8PIN);
 		case PORTD_ID: return GET_BIT(PIND,Copy_u8PIN);
 	}
 }
- 18a:	41 30       	cpi	r20, 0x01	; 1
- 18c:	a1 f5       	brne	.+104    	; 0x1f6 <DIO_voidSetPinValue+0x6c>
- 18e:	81 30       	cpi	r24, 0x01	; 1
- 190:	89 f0       	breq	.+34     	; 0x1b4 <DIO_voidSetPinValue+0x2a>
- 192:	28 f0       	brcs	.+10     	; 0x19e <DIO_voidSetPinValue+0x14>
- 194:	82 30       	cpi	r24, 0x02	; 2
- 196:	c9 f0       	breq	.+50     	; 0x1ca <DIO_voidSetPinValue+0x40>
- 198:	83 30       	cpi	r24, 0x03	; 3
- 19a:	11 f1       	breq	.+68     	; 0x1e0 <DIO_voidSetPinValue+0x56>
- 19c:	08 95       	ret
- 19e:	2b b3       	in	r18, 0x1b	; 27
- 1a0:	81 e0       	ldi	r24, 0x01	; 1
- 1a2:	90 e0       	ldi	r25, 0x00	; 0
- 1a4:	02 c0       	rjmp	.+4      	; 0x1aa <DIO_voidSetPinValue+0x20>
- 1a6:	88 0f       	add	r24, r24
- 1a8:	99 1f       	adc	r25, r25
- 1aa:	6a 95       	dec	r22
- 1ac:	e2 f7       	brpl	.-8      	; 0x1a6 <DIO_voidSetPinValue+0x1c>
- 1ae:	82 2b       	or	r24, r18
- 1b0:	8b bb       	out	0x1b, r24	; 27
- 1b2:	08 95       	ret
- 1b4:	28 b3       	in	r18, 0x18	; 24
- 1b6:	81 e0       	ldi	r24, 0x01	; 1
- 1b8:	90 e0       	ldi	r25, 0x00	; 0
- 1ba:	02 c0       	rjmp	.+4      	; 0x1c0 <DIO_voidSetPinValue+0x36>
- 1bc:	88 0f       	add	r24, r24
- 1be:	99 1f       	adc	r25, r25
- 1c0:	6a 95       	dec	r22
- 1c2:	e2 f7       	brpl	.-8      	; 0x1bc <DIO_voidSetPinValue+0x32>
- 1c4:	82 2b       	or	r24, r18
- 1c6:	88 bb       	out	0x18, r24	; 24
- 1c8:	08 95       	ret
- 1ca:	25 b3       	in	r18, 0x15	; 21
- 1cc:	81 e0       	ldi	r24, 0x01	; 1
- 1ce:	90 e0       	ldi	r25, 0x00	; 0
- 1d0:	02 c0       	rjmp	.+4      	; 0x1d6 <DIO_voidSetPinValue+0x4c>
- 1d2:	88 0f       	add	r24, r24
- 1d4:	99 1f       	adc	r25, r25
- 1d6:	6a 95       	dec	r22
- 1d8:	e2 f7       	brpl	.-8      	; 0x1d2 <DIO_voidSetPinValue+0x48>
- 1da:	82 2b       	or	r24, r18
- 1dc:	85 bb       	out	0x15, r24	; 21
- 1de:	08 95       	ret
- 1e0:	22 b3       	in	r18, 0x12	; 18
- 1e2:	81 e0       	ldi	r24, 0x01	; 1
- 1e4:	90 e0       	ldi	r25, 0x00	; 0
- 1e6:	02 c0       	rjmp	.+4      	; 0x1ec <DIO_voidSetPinValue+0x62>
- 1e8:	88 0f       	add	r24, r24
- 1ea:	99 1f       	adc	r25, r25
- 1ec:	6a 95       	dec	r22
- 1ee:	e2 f7       	brpl	.-8      	; 0x1e8 <DIO_voidSetPinValue+0x5e>
- 1f0:	82 2b       	or	r24, r18
- 1f2:	82 bb       	out	0x12, r24	; 18
- 1f4:	08 95       	ret
- 1f6:	41 11       	cpse	r20, r1
- 1f8:	37 c0       	rjmp	.+110    	; 0x268 <DIO_voidSetPinValue+0xde>
- 1fa:	81 30       	cpi	r24, 0x01	; 1
- 1fc:	91 f0       	breq	.+36     	; 0x222 <DIO_voidSetPinValue+0x98>
- 1fe:	28 f0       	brcs	.+10     	; 0x20a <DIO_voidSetPinValue+0x80>
- 200:	82 30       	cpi	r24, 0x02	; 2
- 202:	d9 f0       	breq	.+54     	; 0x23a <DIO_voidSetPinValue+0xb0>
- 204:	83 30       	cpi	r24, 0x03	; 3
- 206:	29 f1       	breq	.+74     	; 0x252 <DIO_voidSetPinValue+0xc8>
- 208:	08 95       	ret
- 20a:	2b b3       	in	r18, 0x1b	; 27
- 20c:	81 e0       	ldi	r24, 0x01	; 1
- 20e:	90 e0       	ldi	r25, 0x00	; 0
- 210:	02 c0       	rjmp	.+4      	; 0x216 <DIO_voidSetPinValue+0x8c>
- 212:	88 0f       	add	r24, r24
- 214:	99 1f       	adc	r25, r25
- 216:	6a 95       	dec	r22
- 218:	e2 f7       	brpl	.-8      	; 0x212 <DIO_voidSetPinValue+0x88>
- 21a:	80 95       	com	r24
- 21c:	82 23       	and	r24, r18
- 21e:	8b bb       	out	0x1b, r24	; 27
- 220:	08 95       	ret
- 222:	28 b3       	in	r18, 0x18	; 24
- 224:	81 e0       	ldi	r24, 0x01	; 1
- 226:	90 e0       	ldi	r25, 0x00	; 0
- 228:	02 c0       	rjmp	.+4      	; 0x22e <DIO_voidSetPinValue+0xa4>
- 22a:	88 0f       	add	r24, r24
- 22c:	99 1f       	adc	r25, r25
- 22e:	6a 95       	dec	r22
- 230:	e2 f7       	brpl	.-8      	; 0x22a <DIO_voidSetPinValue+0xa0>
- 232:	80 95       	com	r24
- 234:	82 23       	and	r24, r18
- 236:	88 bb       	out	0x18, r24	; 24
- 238:	08 95       	ret
- 23a:	25 b3       	in	r18, 0x15	; 21
- 23c:	81 e0       	ldi	r24, 0x01	; 1
- 23e:	90 e0       	ldi	r25, 0x00	; 0
- 240:	02 c0       	rjmp	.+4      	; 0x246 <DIO_voidSetPinValue+0xbc>
- 242:	88 0f       	add	r24, r24
- 244:	99 1f       	adc	r25, r25
- 246:	6a 95       	dec	r22
- 248:	e2 f7       	brpl	.-8      	; 0x242 <DIO_voidSetPinValue+0xb8>
- 24a:	80 95       	com	r24
- 24c:	82 23       	and	r24, r18
- 24e:	85 bb       	out	0x15, r24	; 21
- 250:	08 95       	ret
- 252:	22 b3       	in	r18, 0x12	; 18
- 254:	81 e0       	ldi	r24, 0x01	; 1
- 256:	90 e0       	ldi	r25, 0x00	; 0
- 258:	02 c0       	rjmp	.+4      	; 0x25e <DIO_voidSetPinValue+0xd4>
- 25a:	88 0f       	add	r24, r24
- 25c:	99 1f       	adc	r25, r25
- 25e:	6a 95       	dec	r22
- 260:	e2 f7       	brpl	.-8      	; 0x25a <DIO_voidSetPinValue+0xd0>
- 262:	80 95       	com	r24
- 264:	82 23       	and	r24, r18
- 266:	82 bb       	out	0x12, r24	; 18
- 268:	08 95       	ret
+ 1d0:	41 30       	cpi	r20, 0x01	; 1
+ 1d2:	a1 f5       	brne	.+104    	; 0x23c <DIO_voidSetPinValue+0x6c>
+ 1d4:	81 30       	cpi	r24, 0x01	; 1
+ 1d6:	89 f0       	breq	.+34     	; 0x1fa <DIO_voidSetPinValue+0x2a>
+ 1d8:	28 f0       	brcs	.+10     	; 0x1e4 <DIO_voidSetPinValue+0x14>
+ 1da:	82 30       	cpi	r24, 0x02	; 2
+ 1dc:	c9 f0       	breq	.+50     	; 0x210 <DIO_voidSetPinValue+0x40>
+ 1de:	83 30       	cpi	r24, 0x03	; 3
+ 1e0:	11 f1       	breq	.+68     	; 0x226 <DIO_voidSetPinValue+0x56>
+ 1e2:	08 95       	ret
+ 1e4:	2b b3       	in	r18, 0x1b	; 27
+ 1e6:	81 e0       	ldi	r24, 0x01	; 1
+ 1e8:	90 e0       	ldi	r25, 0x00	; 0
+ 1ea:	02 c0       	rjmp	.+4      	; 0x1f0 <DIO_voidSetPinValue+0x20>
+ 1ec:	88 0f       	add	r24, r24
+ 1ee:	99 1f       	adc	r25, r25
+ 1f0:	6a 95       	dec	r22
+ 1f2:	e2 f7       	brpl	.-8      	; 0x1ec <DIO_voidSetPinValue+0x1c>
+ 1f4:	82 2b       	or	r24, r18
+ 1f6:	8b bb       	out	0x1b, r24	; 27
+ 1f8:	08 95       	ret
+ 1fa:	28 b3       	in	r18, 0x18	; 24
+ 1fc:	81 e0       	ldi	r24, 0x01	; 1
+ 1fe:	90 e0       	ldi	r25, 0x00	; 0
+ 200:	02 c0       	rjmp	.+4      	; 0x206 <DIO_voidSetPinValue+0x36>
+ 202:	88 0f       	add	r24, r24
+ 204:	99 1f       	adc	r25, r25
+ 206:	6a 95       	dec	r22
+ 208:	e2 f7       	brpl	.-8      	; 0x202 <DIO_voidSetPinValue+0x32>
+ 20a:	82 2b       	or	r24, r18
+ 20c:	88 bb       	out	0x18, r24	; 24
+ 20e:	08 95       	ret
+ 210:	25 b3       	in	r18, 0x15	; 21
+ 212:	81 e0       	ldi	r24, 0x01	; 1
+ 214:	90 e0       	ldi	r25, 0x00	; 0
+ 216:	02 c0       	rjmp	.+4      	; 0x21c <DIO_voidSetPinValue+0x4c>
+ 218:	88 0f       	add	r24, r24
+ 21a:	99 1f       	adc	r25, r25
+ 21c:	6a 95       	dec	r22
+ 21e:	e2 f7       	brpl	.-8      	; 0x218 <DIO_voidSetPinValue+0x48>
+ 220:	82 2b       	or	r24, r18
+ 222:	85 bb       	out	0x15, r24	; 21
+ 224:	08 95       	ret
+ 226:	22 b3       	in	r18, 0x12	; 18
+ 228:	81 e0       	ldi	r24, 0x01	; 1
+ 22a:	90 e0       	ldi	r25, 0x00	; 0
+ 22c:	02 c0       	rjmp	.+4      	; 0x232 <DIO_voidSetPinValue+0x62>
+ 22e:	88 0f       	add	r24, r24
+ 230:	99 1f       	adc	r25, r25
+ 232:	6a 95       	dec	r22
+ 234:	e2 f7       	brpl	.-8      	; 0x22e <DIO_voidSetPinValue+0x5e>
+ 236:	82 2b       	or	r24, r18
+ 238:	82 bb       	out	0x12, r24	; 18
+ 23a:	08 95       	ret
+ 23c:	41 11       	cpse	r20, r1
+ 23e:	37 c0       	rjmp	.+110    	; 0x2ae <DIO_voidSetPinValue+0xde>
+ 240:	81 30       	cpi	r24, 0x01	; 1
+ 242:	91 f0       	breq	.+36     	; 0x268 <DIO_voidSetPinValue+0x98>
+ 244:	28 f0       	brcs	.+10     	; 0x250 <DIO_voidSetPinValue+0x80>
+ 246:	82 30       	cpi	r24, 0x02	; 2
+ 248:	d9 f0       	breq	.+54     	; 0x280 <DIO_voidSetPinValue+0xb0>
+ 24a:	83 30       	cpi	r24, 0x03	; 3
+ 24c:	29 f1       	breq	.+74     	; 0x298 <DIO_voidSetPinValue+0xc8>
+ 24e:	08 95       	ret
+ 250:	2b b3       	in	r18, 0x1b	; 27
+ 252:	81 e0       	ldi	r24, 0x01	; 1
+ 254:	90 e0       	ldi	r25, 0x00	; 0
+ 256:	02 c0       	rjmp	.+4      	; 0x25c <DIO_voidSetPinValue+0x8c>
+ 258:	88 0f       	add	r24, r24
+ 25a:	99 1f       	adc	r25, r25
+ 25c:	6a 95       	dec	r22
+ 25e:	e2 f7       	brpl	.-8      	; 0x258 <DIO_voidSetPinValue+0x88>
+ 260:	80 95       	com	r24
+ 262:	82 23       	and	r24, r18
+ 264:	8b bb       	out	0x1b, r24	; 27
+ 266:	08 95       	ret
+ 268:	28 b3       	in	r18, 0x18	; 24
+ 26a:	81 e0       	ldi	r24, 0x01	; 1
+ 26c:	90 e0       	ldi	r25, 0x00	; 0
+ 26e:	02 c0       	rjmp	.+4      	; 0x274 <DIO_voidSetPinValue+0xa4>
+ 270:	88 0f       	add	r24, r24
+ 272:	99 1f       	adc	r25, r25
+ 274:	6a 95       	dec	r22
+ 276:	e2 f7       	brpl	.-8      	; 0x270 <DIO_voidSetPinValue+0xa0>
+ 278:	80 95       	com	r24
+ 27a:	82 23       	and	r24, r18
+ 27c:	88 bb       	out	0x18, r24	; 24
+ 27e:	08 95       	ret
+ 280:	25 b3       	in	r18, 0x15	; 21
+ 282:	81 e0       	ldi	r24, 0x01	; 1
+ 284:	90 e0       	ldi	r25, 0x00	; 0
+ 286:	02 c0       	rjmp	.+4      	; 0x28c <DIO_voidSetPinValue+0xbc>
+ 288:	88 0f       	add	r24, r24
+ 28a:	99 1f       	adc	r25, r25
+ 28c:	6a 95       	dec	r22
+ 28e:	e2 f7       	brpl	.-8      	; 0x288 <DIO_voidSetPinValue+0xb8>
+ 290:	80 95       	com	r24
+ 292:	82 23       	and	r24, r18
+ 294:	85 bb       	out	0x15, r24	; 21
+ 296:	08 95       	ret
+ 298:	22 b3       	in	r18, 0x12	; 18
+ 29a:	81 e0       	ldi	r24, 0x01	; 1
+ 29c:	90 e0       	ldi	r25, 0x00	; 0
+ 29e:	02 c0       	rjmp	.+4      	; 0x2a4 <DIO_voidSetPinValue+0xd4>
+ 2a0:	88 0f       	add	r24, r24
+ 2a2:	99 1f       	adc	r25, r25
+ 2a4:	6a 95       	dec	r22
+ 2a6:	e2 f7       	brpl	.-8      	; 0x2a0 <DIO_voidSetPinValue+0xd0>
+ 2a8:	80 95       	com	r24
+ 2aa:	82 23       	and	r24, r18
+ 2ac:	82 bb       	out	0x12, r24	; 18
+ 2ae:	08 95       	ret
 
-0000026a <DIO_voidSetPortDirection>:
+000002b0 <DIO_voidSetPortDirection>:
  */
 void DIO_voidSetPortDirection   (u8 Copy_u8PORT , u8 Copy_u8Direction )
 {
 	
 		/* Setup the port direction as required */
 		switch (Copy_u8PORT)
- 26a:	81 30       	cpi	r24, 0x01	; 1
- 26c:	41 f0       	breq	.+16     	; 0x27e <DIO_voidSetPortDirection+0x14>
- 26e:	28 f0       	brcs	.+10     	; 0x27a <DIO_voidSetPortDirection+0x10>
- 270:	82 30       	cpi	r24, 0x02	; 2
- 272:	39 f0       	breq	.+14     	; 0x282 <DIO_voidSetPortDirection+0x18>
- 274:	83 30       	cpi	r24, 0x03	; 3
- 276:	39 f0       	breq	.+14     	; 0x286 <DIO_voidSetPortDirection+0x1c>
- 278:	08 95       	ret
+ 2b0:	81 30       	cpi	r24, 0x01	; 1
+ 2b2:	41 f0       	breq	.+16     	; 0x2c4 <DIO_voidSetPortDirection+0x14>
+ 2b4:	28 f0       	brcs	.+10     	; 0x2c0 <DIO_voidSetPortDirection+0x10>
+ 2b6:	82 30       	cpi	r24, 0x02	; 2
+ 2b8:	39 f0       	breq	.+14     	; 0x2c8 <DIO_voidSetPortDirection+0x18>
+ 2ba:	83 30       	cpi	r24, 0x03	; 3
+ 2bc:	39 f0       	breq	.+14     	; 0x2cc <DIO_voidSetPortDirection+0x1c>
+ 2be:	08 95       	ret
 		{
 			case PORTA_ID: DDRA = Copy_u8Direction; break;
- 27a:	6a bb       	out	0x1a, r22	; 26
- 27c:	08 95       	ret
+ 2c0:	6a bb       	out	0x1a, r22	; 26
+ 2c2:	08 95       	ret
 			case PORTB_ID: DDRB = Copy_u8Direction; break;
- 27e:	67 bb       	out	0x17, r22	; 23
- 280:	08 95       	ret
+ 2c4:	67 bb       	out	0x17, r22	; 23
+ 2c6:	08 95       	ret
 			case PORTC_ID: DDRC = Copy_u8Direction; break;
- 282:	64 bb       	out	0x14, r22	; 20
- 284:	08 95       	ret
+ 2c8:	64 bb       	out	0x14, r22	; 20
+ 2ca:	08 95       	ret
 			case PORTD_ID: DDRD = Copy_u8Direction; break;
- 286:	61 bb       	out	0x11, r22	; 17
- 288:	08 95       	ret
+ 2cc:	61 bb       	out	0x11, r22	; 17
+ 2ce:	08 95       	ret
 
-0000028a <PWM_voidInit>:
+000002d0 <PWM_voidInit>:
 #include "../../Lib/STD_TYPES.h"
 #include "../../MCAL/DIO/DIO.h"
 
 void PWM_voidInit() {
 	// Set Fast PWM mode, non-inverting
 	TCCR0 = (1 << WGM00) | (1 << WGM01) | (1 << COM01) | (1 << CS01); // Fast PWM, Prescaler=8
- 28a:	8a e6       	ldi	r24, 0x6A	; 106
- 28c:	83 bf       	out	0x33, r24	; 51
+ 2d0:	8a e6       	ldi	r24, 0x6A	; 106
+ 2d2:	83 bf       	out	0x33, r24	; 51
 	  TCCR2 = (1 << WGM20) | (1 << WGM21) | (1 << COM21) | (1 << CS22); // Fast PWM, non-inverting mode, Prescaler=64
- 28e:	8c e6       	ldi	r24, 0x6C	; 108
- 290:	85 bd       	out	0x25, r24	; 37
- 292:	08 95       	ret
+ 2d4:	8c e6       	ldi	r24, 0x6C	; 108
+ 2d6:	85 bd       	out	0x25, r24	; 37
+ 2d8:	08 95       	ret
 
-00000294 <PWM_voidSetDutyCycle_OC0>:
+000002da <PWM_voidSetDutyCycle_OC0>:
 	
 }
 
 void PWM_voidSetDutyCycle_OC0(u8 duty_cycle) {
 	OCR0 = duty_cycle;
- 294:	8c bf       	out	0x3c, r24	; 60
- 296:	08 95       	ret
+ 2da:	8c bf       	out	0x3c, r24	; 60
+ 2dc:	08 95       	ret
 
-00000298 <PWM_voidSetDutyCycle_OC2>:
+000002de <PWM_voidSetDutyCycle_OC2>:
 }
 
 void PWM_voidSetDutyCycle_OC2(u16 duty_cycle) {
     OCR2 = duty_cycle; // Directly set the duty cycle
- 298:	83 bd       	out	0x23, r24	; 35
- 29a:	08 95       	ret
+ 2de:	83 bd       	out	0x23, r24	; 35
+ 2e0:	08 95       	ret
 
-0000029c <_exit>:
- 29c:	f8 94       	cli
+000002e2 <UART_init>:
 
-0000029e <__stop_program>:
- 29e:	ff cf       	rjmp	.-2      	; 0x29e <__stop_program>
+	/*
+	 * Put the required data in the UDR register and it also clear the UDRE flag as
+	 * the UDR register is not empty now
+	 */
+	UDR = data;
+ 2e2:	22 e0       	ldi	r18, 0x02	; 2
+ 2e4:	2b b9       	out	0x0b, r18	; 11
+ 2e6:	28 e1       	ldi	r18, 0x18	; 24
+ 2e8:	2a b9       	out	0x0a, r18	; 10
+ 2ea:	26 e8       	ldi	r18, 0x86	; 134
+ 2ec:	20 bd       	out	0x20, r18	; 32
+ 2ee:	dc 01       	movw	r26, r24
+ 2f0:	cb 01       	movw	r24, r22
+ 2f2:	88 0f       	add	r24, r24
+ 2f4:	99 1f       	adc	r25, r25
+ 2f6:	aa 1f       	adc	r26, r26
+ 2f8:	bb 1f       	adc	r27, r27
+ 2fa:	88 0f       	add	r24, r24
+ 2fc:	99 1f       	adc	r25, r25
+ 2fe:	aa 1f       	adc	r26, r26
+ 300:	bb 1f       	adc	r27, r27
+ 302:	9c 01       	movw	r18, r24
+ 304:	ad 01       	movw	r20, r26
+ 306:	22 0f       	add	r18, r18
+ 308:	33 1f       	adc	r19, r19
+ 30a:	44 1f       	adc	r20, r20
+ 30c:	55 1f       	adc	r21, r21
+ 30e:	60 e0       	ldi	r22, 0x00	; 0
+ 310:	74 e2       	ldi	r23, 0x24	; 36
+ 312:	84 ef       	ldi	r24, 0xF4	; 244
+ 314:	90 e0       	ldi	r25, 0x00	; 0
+ 316:	0e 94 96 01 	call	0x32c	; 0x32c <__udivmodsi4>
+ 31a:	21 50       	subi	r18, 0x01	; 1
+ 31c:	31 09       	sbc	r19, r1
+ 31e:	30 bd       	out	0x20, r19	; 32
+ 320:	29 b9       	out	0x09, r18	; 9
+ 322:	08 95       	ret
+
+00000324 <UART_recieveByte>:
+ * Functional responsible for receive byte from another UART device.
+ */
+u8 UART_recieveByte(void)
+{
+	/* RXC flag is set when the UART receive data so wait until this flag is set to one */
+	while(!GET_BIT(UCSRA,RXC)){}
+ 324:	5f 9b       	sbis	0x0b, 7	; 11
+ 326:	fe cf       	rjmp	.-4      	; 0x324 <UART_recieveByte>
+
+	/*
+	 * Read the received data from the Rx buffer (UDR)
+	 * The RXC flag will be cleared after read the data
+	 */
+    return UDR;		
+ 328:	8c b1       	in	r24, 0x0c	; 12
+}
+ 32a:	08 95       	ret
+
+0000032c <__udivmodsi4>:
+ 32c:	a1 e2       	ldi	r26, 0x21	; 33
+ 32e:	1a 2e       	mov	r1, r26
+ 330:	aa 1b       	sub	r26, r26
+ 332:	bb 1b       	sub	r27, r27
+ 334:	fd 01       	movw	r30, r26
+ 336:	0d c0       	rjmp	.+26     	; 0x352 <__udivmodsi4_ep>
+
+00000338 <__udivmodsi4_loop>:
+ 338:	aa 1f       	adc	r26, r26
+ 33a:	bb 1f       	adc	r27, r27
+ 33c:	ee 1f       	adc	r30, r30
+ 33e:	ff 1f       	adc	r31, r31
+ 340:	a2 17       	cp	r26, r18
+ 342:	b3 07       	cpc	r27, r19
+ 344:	e4 07       	cpc	r30, r20
+ 346:	f5 07       	cpc	r31, r21
+ 348:	20 f0       	brcs	.+8      	; 0x352 <__udivmodsi4_ep>
+ 34a:	a2 1b       	sub	r26, r18
+ 34c:	b3 0b       	sbc	r27, r19
+ 34e:	e4 0b       	sbc	r30, r20
+ 350:	f5 0b       	sbc	r31, r21
+
+00000352 <__udivmodsi4_ep>:
+ 352:	66 1f       	adc	r22, r22
+ 354:	77 1f       	adc	r23, r23
+ 356:	88 1f       	adc	r24, r24
+ 358:	99 1f       	adc	r25, r25
+ 35a:	1a 94       	dec	r1
+ 35c:	69 f7       	brne	.-38     	; 0x338 <__udivmodsi4_loop>
+ 35e:	60 95       	com	r22
+ 360:	70 95       	com	r23
+ 362:	80 95       	com	r24
+ 364:	90 95       	com	r25
+ 366:	9b 01       	movw	r18, r22
+ 368:	ac 01       	movw	r20, r24
+ 36a:	bd 01       	movw	r22, r26
+ 36c:	cf 01       	movw	r24, r30
+ 36e:	08 95       	ret
+
+00000370 <_exit>:
+ 370:	f8 94       	cli
+
+00000372 <__stop_program>:
+ 372:	ff cf       	rjmp	.-2      	; 0x372 <__stop_program>

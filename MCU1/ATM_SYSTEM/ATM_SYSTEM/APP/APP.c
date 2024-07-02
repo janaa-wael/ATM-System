@@ -10,13 +10,14 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
-/********************************* HAL **********************************/
+/********************************* Lib **********************************/
 #include "../Lib/BIT_MATH.h"
 #include "../Lib/STD_TYPES.h"
 /********************************* MCAL *********************************/
 #include "../MCAL/DIO/DIO.h"
 #include "../MCAL/EXTI/EXTI.h"
 #include "../MCAL/ADC/ADC.h"
+#include "../MCAL/UART/UART.h"
 /********************************* HAL **********************************/
 #include "../HAL/KEYPAD/KEYPAD.h"
 #include "../HAL/LCD/LCD.h"
@@ -24,11 +25,10 @@
 #include "../HAL/LED/LED.h"
 /********************************* APP **********************************/
 #include "APP.h"
+#include "User.h"
 /************************************************************************/
 u8 pass[10] = "123";
-u32 balance = 0;
-
-ADC_pfNotification = &APP_voidADC_Callback;
+u64 balance = 0;
 
 void HAL_Init()
 {
@@ -36,43 +36,20 @@ void HAL_Init()
 	 KEYPAD_voidInit();
 	 LEDS_INIT();
 	 BUZZER_Init();
-	 ADC_voidInit();
-	 ADC_voidGetDigitalValueAsynch(ADC_u8_CHANNEL_4,ADC_pfNotification);
 }
 
-void APP_voidADC_Callback(u16 ADC_READING)
+void MCAL_init()
 {
-	u8 str_temp[10];
-	u8 str_reading[10];
-	u32 Temperature = ADC_READING*0.488;
-	sprintf(str_temp,"%d",(int)Temperature);
-	sprintf(str_reading,"%d",ADC_READING);
-	LCD_voidClearScreen();
-	LCD_voidSendString("ADC: ");
-	LCD_voidSendString(str_reading);
-	LCD_voidSetCursor(1, 0);
-	LCD_voidSendString("Temp: ");
-	LCD_voidSendData(str_temp);
-	_delay_ms(4000);
-	if(Temperature > 30)
-	{
-		DIO_voidSetPinDirection(PORTA_ID,PIN7_ID,PIN_OUTPUT);
-		DIO_voidSetPinValue(PORTA_ID,PIN7_ID,PIN_HIGH);
-		_delay_ms(1000);
-		DIO_voidSetPinValue(PORTA_ID,PIN7_ID,PIN_LOW);
-		_delay_ms(1000);
-		DIO_voidSetPinValue(PORTA_ID,PIN7_ID,PIN_HIGH);
-		_delay_ms(1000);
-		DIO_voidSetPinValue(PORTA_ID,PIN7_ID,PIN_LOW);
-		_delay_ms(1000);
-		DIO_voidSetPinValue(PORTA_ID,PIN7_ID,PIN_HIGH);
-		_delay_ms(1000);
-		DIO_voidSetPinValue(PORTA_ID,PIN7_ID,PIN_LOW);
-		_delay_ms(1000);
-		DIO_voidSetPinValue(PORTA_ID,PIN7_ID,PIN_HIGH);
-		_delay_ms(1000);
-		DIO_voidSetPinValue(PORTA_ID,PIN7_ID,PIN_LOW);
-	}
+	UART_init(9600);
+	ADC_Init();
+}
+
+void APP_voidSignInOrLogIn()
+{
+	char input_choice;
+	LCD_voidSendString("1- Sign In");
+	LCD_voidSetStringPos(1,0,"2- Log In");
+	
 }
 
 void APP_voidWelcomeMessage()
@@ -89,23 +66,24 @@ void APP_voidWelcomeMessage()
 void APP_voidCheckPassword()
 {
 	u8 login_flag = 0;
+	u8 num_of_pass_trials = 0;
 	do 
 	{
-		u8 input_pass[4] = "xxx";
+		u8 input_pass[16] = "";
+		u8 kpd_input = 0 , i = 0;
 		LCD_voidClearScreen();
 		if(!login_flag)
 			LCD_voidSendString("Enter password :");
 		else
 			LCD_voidSendString("Reenter ur pass");
 		LCD_voidSetCursor(1,0);
-		for(u8 i = 0 ; i < 3 ; i++)
+		do
 		{
-			while(input_pass[i] == 'x')
-			input_pass[i] = KEYPAD_READ();
+			input_pass[i] = APP_u8KeypadInput();
 			LCD_voidSendData(input_pass[i]);
-		}
-		_delay_ms(1000);
+		}while(input_pass[i++] != '=');
 		LCD_voidClearScreen();
+		input_pass[i-1] = '\0';
 		if(!strcmp(input_pass,pass))
 		{
 			login_flag = 0;
@@ -115,9 +93,13 @@ void APP_voidCheckPassword()
 		{
 			login_flag = 1;
 			APP_voidIncorrectPassword();
+			num_of_pass_trials++;
 		}
-	} while (login_flag == 1);
-	
+	} while (login_flag == 1 && num_of_pass_trials<3);
+	if(num_of_pass_trials>2)
+	{
+		APP_voidLockSystem();
+	}
 }
 
 void APP_voidCorrectPassword()
@@ -134,7 +116,12 @@ void APP_voidIncorrectPassword()
 
 void APP_voidBuzzerLedIndicator(u8 BUZZER_ID, u8 LED_ID, u8 delay)
 {
-	for(u8 i = 0 ; i<8 ; i++)
+	u8 num_of_blinks = 0 ;
+	if(LED_ID == RED_LED)
+		num_of_blinks = 8;
+	else 
+		num_of_blinks = 4;
+	for(u8 i = 0 ; i<num_of_blinks ; i++)
 	{
 		LED_TOGGLE(LED_ID);
 		BUZZER_TOGGLE(BUZZER_ID);
@@ -143,6 +130,24 @@ void APP_voidBuzzerLedIndicator(u8 BUZZER_ID, u8 LED_ID, u8 delay)
 	}	
 }
 
+void APP_voidLockSystem()
+{
+	char count_down[3];
+	LCD_voidClearScreen();
+	LCD_voidSendString("You exceeded max");
+	LCD_voidSetStringPos(1,0,"number of trials!");
+	_delay_ms(3000);
+	LCD_voidClearScreen();
+	LCD_voidSendString("System is locked");
+	LCD_voidSetStringPos(1,0,"Try again in");
+	for(int i = 30 ; i>=0 ; i--)
+	{
+		sprintf(count_down,"%d",i);
+		_delay_ms(1000);
+		LCD_voidSetStringPos(1,13,count_down);
+		LCD_voidSendData('s');
+	}
+}
 
 u8 APP_u8KeypadInput()
 {
@@ -182,33 +187,53 @@ void APP_voidPrintMenu()
 			APP_voidChangePassword();	
 			break;		
 	}
+	APP_voidADCSendTempUsingUart();
 }
 
 void APP_voidEnterDepositAmount()
 {
 	u8 deposit_amount[10] = "";
-	u8 i = 0;
-	u32 num;
-	LCD_voidSendString("Enter deposit amount:");
-	LCD_voidSetCursor(1,0);
-	do
+	u8 i = 0, invalid_input_flag = 0;
+	s64 num;
+
+	do 
 	{
-		deposit_amount[i] = APP_u8KeypadInput();
-		if(deposit_amount[i] != '=')
+		LCD_voidClearScreen();
+		LCD_voidSendString("Enter deposit amount:");
+		LCD_voidSetCursor(1,0);
+		do
+		{
+			deposit_amount[i] = APP_u8KeypadInput();
+			if(deposit_amount[i] != '=')
 			LCD_voidSendData(deposit_amount[i]);
-	}while(deposit_amount[i++] != '=');
-	deposit_amount[i-1] = '\0';
-	LCD_voidClearScreen();
-	num = atoi(deposit_amount);
-	balance += num;
-	APP_voidShowDepositMsg();
+		}while(deposit_amount[i++] != '=');
+		deposit_amount[i-1] = '\0';
+		LCD_voidClearScreen();
+		num = APP_voidConvertStrToInt(deposit_amount);
+		if(num>0)
+		{
+			balance += num;
+			UART_sendByte('d');
+			APP_voidShowDepositMsg();
+			invalid_input_flag = 0;
+		}
+		else
+		{
+			LCD_voidClearScreen();
+			LCD_voidSendString("Invalid Input");
+			LCD_voidSetStringPos(1,0,"Please try again");
+			_delay_ms(2000);
+			invalid_input_flag = 1;
+		}
+	} while (invalid_input_flag == 1);
+
 }
 
 void APP_voidWithdrawMoney()
 {
 	u8 withdrawal_amount[16] = "";
 	u8 i = 0;
-	u32 num = 0;
+	s32 num = 0;
 	LCD_voidSendString("Enter withdrawal");
 	LCD_voidSetStringPos(1,0,"amount:");
 	LCD_voidSetCursor(1,7);
@@ -221,17 +246,17 @@ void APP_voidWithdrawMoney()
 	withdrawal_amount[i-1] = '\0';
 	LCD_voidClearScreen();
 	num = APP_voidConvertStrToInt(withdrawal_amount);
-	if(num>balance)
+	if(num>balance || num<0)
 	{
 		APP_voidShoiwWidthdrawWarning();
 	}
 	else
 	{
+		UART_sendByte('w');
 		balance -= num;	
 		APP_voidShowWithdrawMsg();
 	}
 	_delay_ms(1000);
-
 }
 
 void APP_voidViewBalance()
@@ -339,4 +364,48 @@ void APP_voidInterruptSettingsEnable()
 	EXTI_void_GLOABALINT_ENAB();
 	EXTI_void_Int0_Init(RISING_EDGE);
 	
+}
+
+void APP_voidADCSendTempUsingUart()
+{
+	f32 temp_celsius;
+	temp_celsius = (ADC_Read()*0.488);
+	if((int)temp_celsius>30)
+	{
+		UART_sendByte('y');
+	}
+	else
+	{
+		UART_sendByte('n');
+	}
+}
+
+void APP_voidPrintTemp()
+{
+	float celsius;
+	u8 Temperature[5];
+	/* Replace with your application code */
+	while (1)
+	{
+		LCD_voidClearScreen();
+		_delay_ms(1000);
+		celsius = (ADC_Read()*0.488);
+		sprintf(Temperature,"%d%cC", (int)celsius, 0xdf);/* convert integer value to ASCII string */
+		LCD_voidSendString(Temperature);
+		_delay_ms(3000);
+	}
+}
+
+u64 charArrayToInt(char* str) {
+	u64 num = 0;
+	int i = 0;
+	
+	// Iterate through each character of the array
+	while (str[i] != '\0') {
+		// Convert character to integer and add to num
+		num = num * 10 + (str[i] - '0');
+		i++;
+	}
+	
+	return num;
 }

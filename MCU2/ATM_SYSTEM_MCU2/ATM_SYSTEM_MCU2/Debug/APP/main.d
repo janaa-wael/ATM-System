@@ -15,7 +15,10 @@ APP/main.d APP/main.o: ../APP/main.c \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
  ../APP/../Lib/STD_TYPES.h ../APP/../Lib/BIT_MATH.h \
- ../APP/../MCAL/Timer/Timer.h ../APP/../HAL/DC\ MOTOR/DC_MOTOR.h \
+ ../APP/../MCAL/Timer/Timer.h ../APP/../MCAL/UART/UART.h \
+ ../APP/../MCAL/UART/../../Lib/STD_TYPES.h \
+ ../APP/../MCAL/UART/../../Lib/BIT_MATH.h \
+ ../APP/../HAL/DC\ MOTOR/DC_MOTOR.h \
  ../APP/../HAL/DC\ MOTOR/../../Lib/BIT_MATH.h \
  ../APP/../HAL/DC\ MOTOR/../../Lib/STD_TYPES.h \
  ../APP/../HAL/DC\ MOTOR/../../MCAL/DIO/DIO.h \
@@ -56,6 +59,12 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 ../APP/../Lib/BIT_MATH.h:
 
 ../APP/../MCAL/Timer/Timer.h:
+
+../APP/../MCAL/UART/UART.h:
+
+../APP/../MCAL/UART/../../Lib/STD_TYPES.h:
+
+../APP/../MCAL/UART/../../Lib/BIT_MATH.h:
 
 ../APP/../HAL/DC\ MOTOR/DC_MOTOR.h:
 

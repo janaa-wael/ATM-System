@@ -129,6 +129,12 @@
     <Compile Include="APP\main.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="APP\User.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="APP\User.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="HAL\BUZZER\BUZZER.c">
       <SubType>compile</SubType>
     </Compile>
@@ -177,6 +183,12 @@
     <Compile Include="MCAL\EXTI\EXTI.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="MCAL\UART\UART.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\UART\UART.h">
+      <SubType>compile</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="HAL" />
@@ -190,6 +202,7 @@
     <Folder Include="MCAL\DIO" />
     <Folder Include="MCAL\ADC" />
     <Folder Include="MCAL\EXTI" />
+    <Folder Include="MCAL\UART" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>
